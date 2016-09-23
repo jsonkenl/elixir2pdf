@@ -1,6 +1,6 @@
 # Elixir2pdf
 
-Elixir2pdf is a simple Elixir wrapper for ErlGuten, a Erlang PDF generation application. It is limited to my current needs of ErlGuten's functionality as well as some additional functionality not provided by ErlGuten, but I will continue to explore ErlGuten and improve Elixir2pdf over time. If you require specific functionality of ErlGuten that is not currently provided, please submit an [issue](https://github.com/kennellroxco/elixir2pdf/issues). 
+Elixir2pdf is a simple Elixir wrapper for ErlGuten, a Erlang PDF generation application. It is limited to my current needs of ErlGuten's functionality as well as some additional functionality not provided by ErlGuten, but I will continue to explore ErlGuten and improve Elixir2pdf over time. If you require specific functionality of ErlGuten that is not currently exposed, please submit an [issue](https://github.com/kennellroxco/elixir2pdf/issues). 
 
 ## Installation
 
@@ -11,6 +11,7 @@ The package can be installed via GitHub:
     end
 
 ## Basic Usage
+
 
 ## Contributing 
 
