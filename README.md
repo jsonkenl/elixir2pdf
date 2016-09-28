@@ -19,24 +19,24 @@ PDF files have the following basic properties:
 
 ### Current Exposed Functions: 
 
-  General
-  - [new/1](https://github.com/kennellroxco/elixir2pdf/blob/master/lib/elixir2pdf.ex#L10)
-  - [close/1](https://github.com/kennellroxco/elixir2pdf/blob/master/lib/elixir2pdf.ex#L191)
+**General**
+- [new/1](https://github.com/kennellroxco/elixir2pdf/blob/master/lib/elixir2pdf.ex#L10)
+- [close/1](https://github.com/kennellroxco/elixir2pdf/blob/master/lib/elixir2pdf.ex#L191)
 
-  Document
-  - [set_new_page/1](https://github.com/kennellroxco/elixir2pdf/blob/master/lib/elixir2pdf.ex#L22)
-  - [export/2](https://github.com/kennellroxco/elixir2pdf/blob/master/lib/elixir2pdf.ex#L179)
+**Document**
+- [set_new_page/1](https://github.com/kennellroxco/elixir2pdf/blob/master/lib/elixir2pdf.ex#L22)
+- [export/2](https://github.com/kennellroxco/elixir2pdf/blob/master/lib/elixir2pdf.ex#L179)
 
-  Text
-  - [set_font/3](https://github.com/kennellroxco/elixir2pdf/blob/master/lib/elixir2pdf.ex#L38)
-  - [text/4](https://github.com/kennellroxco/elixir2pdf/blob/master/lib/elixir2pdf.ex#L55)
-  - [right_aligned_text/5](https://github.com/kennellroxco/elixir2pdf/blob/master/lib/elixir2pdf.ex#L74)
-  - [center_aligned_text/6](https://github.com/kennellroxco/elixir2pdf/blob/master/lib/elixir2pdf.ex#L100)
+**Text**
+- [set_font/3](https://github.com/kennellroxco/elixir2pdf/blob/master/lib/elixir2pdf.ex#L38)
+- [text/4](https://github.com/kennellroxco/elixir2pdf/blob/master/lib/elixir2pdf.ex#L55)
+- [right_aligned_text/5](https://github.com/kennellroxco/elixir2pdf/blob/master/lib/elixir2pdf.ex#L74)
+- [center_aligned_text/6](https://github.com/kennellroxco/elixir2pdf/blob/master/lib/elixir2pdf.ex#L100)
 
-  Graphics
-  - [draw_line/5](https://github.com/kennellroxco/elixir2pdf/blob/master/lib/elixir2pdf.ex#L131)
-  - [draw_rectangle/5](https://github.com/kennellroxco/elixir2pdf/blob/master/lib/elixir2pdf.ex#L150)
-  - [insert_image/4](https://github.com/kennellroxco/elixir2pdf/blob/master/lib/elixir2pdf.ex#L167)
+**Graphics**
+- [draw_line/5](https://github.com/kennellroxco/elixir2pdf/blob/master/lib/elixir2pdf.ex#L131)
+- [draw_rectangle/5](https://github.com/kennellroxco/elixir2pdf/blob/master/lib/elixir2pdf.ex#L150)
+- [insert_image/4](https://github.com/kennellroxco/elixir2pdf/blob/master/lib/elixir2pdf.ex#L167)
 
 ### Example:
 
