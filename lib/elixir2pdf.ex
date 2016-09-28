@@ -30,20 +30,20 @@ defmodule Elixir2pdf do
 
   ## Parameters
   - `pid` - the process identifier of the current PDF process.
-  - `name` - name of the font in `string` format. See the FONTS documentation for a list of 
-  available fonts.
-  - `size` - font size in `integer` format.
-  - `color` - name of font color in `atom` format. See the COLORS documentation for a list of
+  - `font` - a tuple containing the name of the font in `string` format and the font size in `integer` format. See 
+  the FONTS.md documentation for a list of available fonts.
+  - `color` - name of font color in `atom` format. See the COLORS.md documentation for a list of
   available colors. Default is `:black`.
   """
-  def set_font(pid, name, size, color \\ :black) do
+  def set_font(pid, font, color \\ :black) do
+    {name, size} = font
     pid |> :eg_pdf.set_fill_color(color)
     pid |> :eg_pdf.set_font(name |> String.to_charlist, size)
     pid
   end
 
   @doc """
-  Adds text to a PDF process at a given coordinate. See the PDF_COORDINATES documentation for 
+  Adds text to a PDF process at a given coordinate. See the README.md file for 
   additional detail on how PDF document navigation works.
 
   ## Parameters
@@ -72,10 +72,10 @@ defmodule Elixir2pdf do
   - `text` - the actual text to be added in `string` format.
   """
   def right_aligned_text(pid, set_font, x, y, text) do
-    {font, size} = set_font
+    {name, size} = set_font
     text   = text |> String.to_charlist
-    font   = font |> String.to_charlist
-    length = pid  |> :eg_pdf.get_string_width(font, size, text)
+    name   = name |> String.to_charlist
+    length = pid  |> :eg_pdf.get_string_width(name, size, text)
     x      = x - length
 
     pid |> :eg_pdf.begin_text
@@ -98,10 +98,10 @@ defmodule Elixir2pdf do
   - `text` - the actual text to be added in `string` format.
   """
   def center_aligned_text(pid, x1, x2, y, set_font, text) do
-    {font, size} = set_font
+    {name, size} = set_font
     text   = text |> String.to_charlist
-    font   = font |> String.to_charlist
-    length = pid  |> :eg_pdf.get_string_width(font, size, text)
+    name   = name |> String.to_charlist
+    length = pid  |> :eg_pdf.get_string_width(name, size, text)
     start  = (x2 - x1) 
              |> Kernel.-(length) 
              |> Kernel./(2) 
@@ -125,7 +125,7 @@ defmodule Elixir2pdf do
   - `to` - a tuple containing the `x` and `y` coordinate points of the end of a 
   line (i.e. {72, 72}).
   - `width` - the desired thickness of the line in `integer` or `float` format.
-  - `color` - name of line color in `atom` format. See the COLORS documentation for a list of
+  - `color` - name of line color in `atom` format. See the COLORS.md documentation for a list of
   available colors. Default is `:black`.
   """
   def draw_line(pid, from, to, width, color \\ :black) do
@@ -135,17 +135,59 @@ defmodule Elixir2pdf do
     pid
   end
 
-  def insert_image(pid, path, {x, y}, {w, h}) do
-    pid |> :eg_pdf.image(path |> String.to_charlist, {x, y}, {w, h})
+  @doc """
+  Draws a rectangle starting at a given basepoint of a given size.
+
+  ## Parameters
+  - `pid` - the process identifier of the current PDF process.
+  - `basepoint` - a tuple containing the coordinate points where the bottom-left corder of the rectangle 
+  will be located (i.e. {0, 0}).
+  - `size` - a tuple containing the width and height dimensions of the image (i.e. {64, 89}).
+  - `width` - the desired thickness of the line in `integer` or `float` format.
+  - `color` - name of line color in `atom` format. See the COLORS.md documentation for a list of
+  available colors. Default is `:black`.
+  """
+  def draw_rectangle(pid, basepoint, size, width, color \\ :black) do
+    pid |> :eg_pdf.set_stroke_color(color)
+    pid |> :eg_pdf.set_line_width(width) 
+    pid |> :eg_pdf.rectangle(basepoint, size, :stroke)
     pid
   end
 
+  @doc """
+  Inserts an image into the PDF from a given path.
+
+  ## Parameters
+  - `pid` - the process identifier of the current PDF process.
+  - `path` - path where the image file is located in `string` format (i.e. "./example.jpg").
+  - `basepoint` - a tuple containing the coordinate points where the bottom-left corder of the image 
+  will be located (i.e. {0, 0}).
+  - `size` - a tuple containing the width and height dimensions of the image (i.e. {64, 89}).
+  """
+  def insert_image(pid, path, basepoint, size) do
+    pid |> :eg_pdf.image(path |> String.to_charlist, basepoint, size)
+    pid
+  end
+
+  @doc """
+  Exports the PDF process to a PDF file at the given path.
+
+  ## Parameters
+  - `pid` - the process identifier of the current PDF process.
+  - `path` - path where the generated PDF file will be saved in `string` format (i.e. "./example.pdf").
+  """
   def export(pid, path) do
     {pdf, _} = pid |> :eg_pdf.export
     File.write("#{path}", pdf)
     pid
   end
 
+  @doc """
+  Deletes the PDF process at the given identifier.
+
+  ## Parameters
+  - `pid` - the process identifier of the current PDF process.
+  """
   def close(pid) do
     pid |> :eg_pdf.delete
   end
