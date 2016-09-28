@@ -86,7 +86,7 @@ defmodule Elixir2pdf do
   end
 
   @doc """
-  Adds text to a PDF process that is centered between the two horizontal points given.
+  Adds text to a PDF process that is centered between the two horizontal coordinate points given.
 
   ## Parameters
   - `pid` - the process identifier of the current PDF process.
@@ -115,4 +115,31 @@ defmodule Elixir2pdf do
     pid
   end
 
+  @doc """
+  Draws a line between the two coordinate points given.
+
+  ## Parameters
+  - `pid` - the process identifier of the current PDF process.
+  - `from` - a tuple containing the `x` and `y` coordinate points of the start of a 
+  line (i.e. {0, 0}).
+  - `to` - a tuple containing the `x` and `y` coordinate points of the end of a 
+  line (i.e. {72, 72}).
+  - `width` - the desired thickness of the line in `integer` or `float` format.
+  - `color` - name of line color in `atom` format. See the COLORS documentation for a list of
+  available colors. Default is `:black`.
+  """
+  def draw_line(pid, from, to, width, color \\ :black) do
+    pid |> :eg_pdf.set_stroke_color(color)
+    pid |> :eg_pdf.set_line_width(width)    
+    pid |> :eg_pdf.line(from, to)
+    pid
+  end
 end
+
+
+
+
+
+
+
+
