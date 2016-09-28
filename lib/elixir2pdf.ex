@@ -134,6 +134,21 @@ defmodule Elixir2pdf do
     pid |> :eg_pdf.line(from, to)
     pid
   end
+
+  def insert_image(pid, path, {x, y}, {w, h}) do
+    pid |> :eg_pdf.image(path |> String.to_charlist, {x, y}, {w, h})
+    pid
+  end
+
+  def export(pid, path) do
+    {pdf, _} = pid |> :eg_pdf.export
+    File.write("#{path}", pdf)
+    pid
+  end
+
+  def close(pid) do
+    pid |> :eg_pdf.delete
+  end
 end
 
 
