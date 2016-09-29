@@ -1,0 +1,560 @@
+    <!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="ExDoc v0.13.2">
+    <title>Elixir2pdf – Elixir2pdf v0.0.1</title>
+    <link rel="stylesheet" href="dist/app-f8c39b9230.css" />
+    
+    <script src="dist/sidebar_items.js"></script>
+  </head>
+  <body data-type="modules">
+    <script>if(localStorage.getItem('night-mode')) document.body.className += ' night-mode';</script>
+
+    <div class="main">
+<button class="sidebar-toggle">
+  <i class="icon-menu"></i>
+</button>
+<section class="sidebar">
+
+  
+  <a href="readme.html" class="sidebar-projectLink">
+    <div class="sidebar-projectDetails">
+      <h1 class="sidebar-projectName">
+        Elixir2pdf
+      </h1>
+      <h2 class="sidebar-projectVersion">
+        v0.0.1
+      </h2>
+    </div>
+    
+  </a>
+
+  <div class="sidebar-search">
+    <i class="icon-search"></i>
+    <input type="text" class="sidebar-searchInput" placeholder="search" autocomplete="off" />
+  </div>
+
+  <ul class="sidebar-listNav">
+    <li><a id="extras-list" href="#full-list">Pages</a></li>
+
+    
+      <li><a id="modules-list" href="#full-list">Modules</a></li>
+    
+
+    
+
+    
+  </ul>
+  <div class="gradient"></div>
+  <ul id="full-list" class="sidebar-fullList"></ul>
+</section>
+
+<section class="content">
+  <div class="content-outer">
+    <div id="content" class="content-inner">
+
+
+      <h1>
+        <small class="visible-xs">Elixir2pdf v0.0.1</small>
+        Elixir2pdf
+        
+        
+      </h1>
+
+      
+        <section id="moduledoc">
+          <p>Elixir2pdf is a simple Elixir wrapper for ErlGuten, a Erlang PDF generation application. 
+See README.md for a general overview.</p>
+
+        </section>
+      
+
+      
+        <section id="summary" class="details-list">
+          <h1 class="section-heading">
+            <a class="hover-link" href="#summary">
+              <i class="icon-link"></i>
+            </a>
+            Summary
+          </h1>
+          
+
+          
+  <div class="summary-functions summary">
+    <h2>
+      <a href="#functions">Functions</a>
+    </h2>
+    <div class="summary-row">
+  <div class="summary-signature">
+    <a href="#center_aligned_text/6">center_aligned_text(pid, x1, x2, y, set_font, text)</a>
+  </div>
+  
+    <div class="summary-synopsis"><p>Adds text to a PDF process that is centered between the two horizontal coordinate points given</p>
+</div>
+  
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#close/1">close(pid)</a>
+  </div>
+  
+    <div class="summary-synopsis"><p>Deletes the PDF process at the given identifier</p>
+</div>
+  
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#draw_line/5">draw_line(pid, from, to, width, color \\ :black)</a>
+  </div>
+  
+    <div class="summary-synopsis"><p>Draws a line between the two coordinate points given</p>
+</div>
+  
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#draw_rectangle/5">draw_rectangle(pid, basepoint, size, width, color \\ :black)</a>
+  </div>
+  
+    <div class="summary-synopsis"><p>Draws a rectangle starting at a given basepoint of a given size</p>
+</div>
+  
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#export/2">export(pid, path)</a>
+  </div>
+  
+    <div class="summary-synopsis"><p>Exports the PDF process to a PDF file at the given path</p>
+</div>
+  
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#insert_image/4">insert_image(pid, path, basepoint, size)</a>
+  </div>
+  
+    <div class="summary-synopsis"><p>Inserts an image into the PDF from a given path</p>
+</div>
+  
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#new/0">new()</a>
+  </div>
+  
+    <div class="summary-synopsis"><p>Starts a new PDF process and returns a process identifier (pid)</p>
+</div>
+  
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#right_aligned_text/5">right_aligned_text(pid, set_font, x, y, text)</a>
+  </div>
+  
+    <div class="summary-synopsis"><p>Adds text to a PDF process at a given coordinate with right-hand justification</p>
+</div>
+  
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#set_font/3">set_font(pid, font, color \\ :black)</a>
+  </div>
+  
+    <div class="summary-synopsis"><p>Sets the font that will apply to all text that follows</p>
+</div>
+  
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#set_new_page/1">set_new_page(pid)</a>
+  </div>
+  
+    <div class="summary-synopsis"><p>Creates a new page and returns a process identifier (pid). Any subsequent activity will occur
+on the new page. Note: Elixir2pdf.new/0 takes care of this, so it is not necessary for the 
+first page</p>
+</div>
+  
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#text/4">text(pid, x, y, text)</a>
+  </div>
+  
+    <div class="summary-synopsis"><p>Adds text to a PDF process at a given coordinate. See the README.md file for 
+additional detail on how PDF document navigation works</p>
+</div>
+  
+</div>
+
+  </div>
+
+
+          
+
+          
+
+        </section>
+      
+
+      
+
+      
+        <section id="functions" class="details-list">
+          <h1 class="section-heading">
+            <a class="hover-link" href="#functions">
+              <i class="icon-link"></i>
+            </a>
+            Functions
+          </h1>
+          <div class="detail" id="center_aligned_text/6">
+  <div class="detail-header">
+    <a href="#center_aligned_text/6" class="detail-link" title="Link to this function">
+      <i class="icon-link"></i>
+    </a>
+    <span class="signature">center_aligned_text(pid, x1, x2, y, set_font, text)</span>
+    
+    
+    
+  </div>
+  <section class="docstring">
+    <p>Adds text to a PDF process that is centered between the two horizontal coordinate points given.</p>
+<h2 id="center_aligned_text/6-parameters" class="section-heading">
+  <a href="#center_aligned_text/6-parameters" class="hover-link"><i class="icon-link"></i></a>
+  Parameters
+</h2>
+
+<ul>
+<li><code class="inline">pid</code> - the process identifier of the current PDF process.
+</li>
+<li><code class="inline">x1</code> - the starting horizontal coordinate point in <code class="inline">integer</code> format.
+</li>
+<li><code class="inline">x2</code> - the ending horizontal coordinate point in <code class="inline">integer</code> format.
+</li>
+<li><code class="inline">y</code> - the vertical coordinate point in <code class="inline">integer</code> format.
+</li>
+<li><code class="inline">set_font</code> - a tuple containing the name and font size of the current font set
+(i.e. {“Helvetica”, 8}).
+</li>
+<li><code class="inline">text</code> - the actual text to be added in <code class="inline">string</code> format.
+</li>
+</ul>
+
+  </section>
+</div>
+<div class="detail" id="close/1">
+  <div class="detail-header">
+    <a href="#close/1" class="detail-link" title="Link to this function">
+      <i class="icon-link"></i>
+    </a>
+    <span class="signature">close(pid)</span>
+    
+    
+    
+  </div>
+  <section class="docstring">
+    <p>Deletes the PDF process at the given identifier.</p>
+<h2 id="close/1-parameters" class="section-heading">
+  <a href="#close/1-parameters" class="hover-link"><i class="icon-link"></i></a>
+  Parameters
+</h2>
+
+<ul>
+<li><code class="inline">pid</code> - the process identifier of the current PDF process.
+</li>
+</ul>
+
+  </section>
+</div>
+<div class="detail" id="draw_line/5">
+  <div class="detail-header">
+    <a href="#draw_line/5" class="detail-link" title="Link to this function">
+      <i class="icon-link"></i>
+    </a>
+    <span class="signature">draw_line(pid, from, to, width, color \\ :black)</span>
+    
+    
+    
+  </div>
+  <section class="docstring">
+    <p>Draws a line between the two coordinate points given.</p>
+<h2 id="draw_line/5-parameters" class="section-heading">
+  <a href="#draw_line/5-parameters" class="hover-link"><i class="icon-link"></i></a>
+  Parameters
+</h2>
+
+<ul>
+<li><code class="inline">pid</code> - the process identifier of the current PDF process.
+</li>
+<li><code class="inline">from</code> - a tuple containing the <code class="inline">x</code> and <code class="inline">y</code> coordinate points of the start of a 
+line (i.e. {0, 0}).
+</li>
+<li><code class="inline">to</code> - a tuple containing the <code class="inline">x</code> and <code class="inline">y</code> coordinate points of the end of a 
+line (i.e. {72, 72}).
+</li>
+<li><code class="inline">width</code> - the desired thickness of the line in <code class="inline">integer</code> or <code class="inline">float</code> format.
+</li>
+<li><code class="inline">color</code> - name of line color in <code class="inline">atom</code> format. See the COLORS.md documentation for a list of
+available colors. Default is <code class="inline">:black</code>.
+</li>
+</ul>
+
+  </section>
+</div>
+<div class="detail" id="draw_rectangle/5">
+  <div class="detail-header">
+    <a href="#draw_rectangle/5" class="detail-link" title="Link to this function">
+      <i class="icon-link"></i>
+    </a>
+    <span class="signature">draw_rectangle(pid, basepoint, size, width, color \\ :black)</span>
+    
+    
+    
+  </div>
+  <section class="docstring">
+    <p>Draws a rectangle starting at a given basepoint of a given size.</p>
+<h2 id="draw_rectangle/5-parameters" class="section-heading">
+  <a href="#draw_rectangle/5-parameters" class="hover-link"><i class="icon-link"></i></a>
+  Parameters
+</h2>
+
+<ul>
+<li><code class="inline">pid</code> - the process identifier of the current PDF process.
+</li>
+<li><code class="inline">basepoint</code> - a tuple containing the coordinate points where the bottom-left corder of the rectangle 
+will be located (i.e. {0, 0}).
+</li>
+<li><code class="inline">size</code> - a tuple containing the width and height dimensions of the image (i.e. {64, 89}).
+</li>
+<li><code class="inline">width</code> - the desired thickness of the line in <code class="inline">integer</code> or <code class="inline">float</code> format.
+</li>
+<li><code class="inline">color</code> - name of line color in <code class="inline">atom</code> format. See the COLORS.md documentation for a list of
+available colors. Default is <code class="inline">:black</code>.
+</li>
+</ul>
+
+  </section>
+</div>
+<div class="detail" id="export/2">
+  <div class="detail-header">
+    <a href="#export/2" class="detail-link" title="Link to this function">
+      <i class="icon-link"></i>
+    </a>
+    <span class="signature">export(pid, path)</span>
+    
+    
+    
+  </div>
+  <section class="docstring">
+    <p>Exports the PDF process to a PDF file at the given path.</p>
+<h2 id="export/2-parameters" class="section-heading">
+  <a href="#export/2-parameters" class="hover-link"><i class="icon-link"></i></a>
+  Parameters
+</h2>
+
+<ul>
+<li><code class="inline">pid</code> - the process identifier of the current PDF process.
+</li>
+<li><code class="inline">path</code> - path where the generated PDF file will be saved in <code class="inline">string</code> format (i.e. “./example.pdf”).
+</li>
+</ul>
+
+  </section>
+</div>
+<div class="detail" id="insert_image/4">
+  <div class="detail-header">
+    <a href="#insert_image/4" class="detail-link" title="Link to this function">
+      <i class="icon-link"></i>
+    </a>
+    <span class="signature">insert_image(pid, path, basepoint, size)</span>
+    
+    
+    
+  </div>
+  <section class="docstring">
+    <p>Inserts an image into the PDF from a given path.</p>
+<h2 id="insert_image/4-parameters" class="section-heading">
+  <a href="#insert_image/4-parameters" class="hover-link"><i class="icon-link"></i></a>
+  Parameters
+</h2>
+
+<ul>
+<li><code class="inline">pid</code> - the process identifier of the current PDF process.
+</li>
+<li><code class="inline">path</code> - path where the image file is located in <code class="inline">string</code> format (i.e. “./example.jpg”).
+</li>
+<li><code class="inline">basepoint</code> - a tuple containing the coordinate points where the bottom-left corder of the image 
+will be located (i.e. {0, 0}).
+</li>
+<li><code class="inline">size</code> - a tuple containing the width and height dimensions of the image (i.e. {64, 89}).
+</li>
+</ul>
+
+  </section>
+</div>
+<div class="detail" id="new/0">
+  <div class="detail-header">
+    <a href="#new/0" class="detail-link" title="Link to this function">
+      <i class="icon-link"></i>
+    </a>
+    <span class="signature">new()</span>
+    
+    
+    
+  </div>
+  <section class="docstring">
+    <p>Starts a new PDF process and returns a process identifier (pid). </p>
+
+  </section>
+</div>
+<div class="detail" id="right_aligned_text/5">
+  <div class="detail-header">
+    <a href="#right_aligned_text/5" class="detail-link" title="Link to this function">
+      <i class="icon-link"></i>
+    </a>
+    <span class="signature">right_aligned_text(pid, set_font, x, y, text)</span>
+    
+    
+    
+  </div>
+  <section class="docstring">
+    <p>Adds text to a PDF process at a given coordinate with right-hand justification.</p>
+<h2 id="right_aligned_text/5-parameters" class="section-heading">
+  <a href="#right_aligned_text/5-parameters" class="hover-link"><i class="icon-link"></i></a>
+  Parameters
+</h2>
+
+<ul>
+<li><code class="inline">pid</code> - the process identifier of the current PDF process.
+</li>
+<li><code class="inline">set_font</code> - a tuple containing the name and font size of the current font set
+(i.e. {“Helvetica”, 8}).
+</li>
+<li><code class="inline">x</code> - the horizontal coordinate point where the text will end in <code class="inline">integer</code> format.
+</li>
+<li><code class="inline">y</code> - the vertical coordinate point in <code class="inline">integer</code> format.
+</li>
+<li><code class="inline">text</code> - the actual text to be added in <code class="inline">string</code> format.
+</li>
+</ul>
+
+  </section>
+</div>
+<div class="detail" id="set_font/3">
+  <div class="detail-header">
+    <a href="#set_font/3" class="detail-link" title="Link to this function">
+      <i class="icon-link"></i>
+    </a>
+    <span class="signature">set_font(pid, font, color \\ :black)</span>
+    
+    
+    
+  </div>
+  <section class="docstring">
+    <p>Sets the font that will apply to all text that follows. </p>
+<h2 id="set_font/3-parameters" class="section-heading">
+  <a href="#set_font/3-parameters" class="hover-link"><i class="icon-link"></i></a>
+  Parameters
+</h2>
+
+<ul>
+<li><code class="inline">pid</code> - the process identifier of the current PDF process.
+</li>
+<li><code class="inline">font</code> - a tuple containing the name of the font in <code class="inline">string</code> format and the font size in <code class="inline">integer</code> format. See 
+the FONTS.md documentation for a list of available fonts.
+</li>
+<li><code class="inline">color</code> - name of font color in <code class="inline">atom</code> format. See the COLORS.md documentation for a list of
+available colors. Default is <code class="inline">:black</code>.
+</li>
+</ul>
+
+  </section>
+</div>
+<div class="detail" id="set_new_page/1">
+  <div class="detail-header">
+    <a href="#set_new_page/1" class="detail-link" title="Link to this function">
+      <i class="icon-link"></i>
+    </a>
+    <span class="signature">set_new_page(pid)</span>
+    
+    
+    
+  </div>
+  <section class="docstring">
+    <p>Creates a new page and returns a process identifier (pid). Any subsequent activity will occur
+on the new page. Note: Elixir2pdf.new/0 takes care of this, so it is not necessary for the 
+first page.</p>
+<h2 id="set_new_page/1-parameters" class="section-heading">
+  <a href="#set_new_page/1-parameters" class="hover-link"><i class="icon-link"></i></a>
+  Parameters
+</h2>
+
+<ul>
+<li><code class="inline">pid</code> - the process identifier of the current PDF process.
+</li>
+</ul>
+
+  </section>
+</div>
+<div class="detail" id="text/4">
+  <div class="detail-header">
+    <a href="#text/4" class="detail-link" title="Link to this function">
+      <i class="icon-link"></i>
+    </a>
+    <span class="signature">text(pid, x, y, text)</span>
+    
+    
+    
+  </div>
+  <section class="docstring">
+    <p>Adds text to a PDF process at a given coordinate. See the README.md file for 
+additional detail on how PDF document navigation works.</p>
+<h2 id="text/4-parameters" class="section-heading">
+  <a href="#text/4-parameters" class="hover-link"><i class="icon-link"></i></a>
+  Parameters
+</h2>
+
+<ul>
+<li><code class="inline">pid</code> - the process identifier of the current PDF process.
+</li>
+<li><code class="inline">x</code> - the horizontal coordinate point in <code class="inline">integer</code> format.
+</li>
+<li><code class="inline">y</code> - the vertical coordinate point in <code class="inline">integer</code> format.
+</li>
+<li><code class="inline">text</code> - the actual text to be added in <code class="inline">string</code> format.
+</li>
+</ul>
+
+  </section>
+</div>
+
+        </section>
+      
+
+      
+
+      
+          <footer class="footer">
+        <p>
+          <span class="line">
+            Built using
+            <a href="https://github.com/elixir-lang/ex_doc" title="ExDoc" rel="help" target="_blank">ExDoc</a> (v0.13.2),
+          </span>
+          <span class="line">
+            designed by
+            <a href="https://twitter.com/dignifiedquire" target="_blank" title="@dignifiedquire">Friedel Ziegelmayer</a>.
+            </span>
+        </p>
+        <button class="night-mode-toggle" />
+      </footer>
+    </div>
+  </div>
+</section>
+</div>
+  <script src="dist/app-61b5aaceee.js"></script>
+  </body>
+</html>
+

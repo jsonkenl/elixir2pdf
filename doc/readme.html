@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="ExDoc v0.13.2">
+    <title>Elixir2pdf – Elixir2pdf v0.0.1</title>
+    <link rel="stylesheet" href="dist/app-f8c39b9230.css" />
+    
+    <script src="dist/sidebar_items.js"></script>
+  </head>
+  <body data-type="extras">
+    <script>if(localStorage.getItem('night-mode')) document.body.className += ' night-mode';</script>
+
+<div class="main">
+<button class="sidebar-toggle">
+  <i class="icon-menu"></i>
+</button>
+<section class="sidebar">
+
+  
+  <a href="readme.html" class="sidebar-projectLink">
+    <div class="sidebar-projectDetails">
+      <h1 class="sidebar-projectName">
+        Elixir2pdf
+      </h1>
+      <h2 class="sidebar-projectVersion">
+        v0.0.1
+      </h2>
+    </div>
+    
+  </a>
+
+  <div class="sidebar-search">
+    <i class="icon-search"></i>
+    <input type="text" class="sidebar-searchInput" placeholder="search" autocomplete="off" />
+  </div>
+
+  <ul class="sidebar-listNav">
+    <li><a id="extras-list" href="#full-list">Pages</a></li>
+
+    
+      <li><a id="modules-list" href="#full-list">Modules</a></li>
+    
+
+    
+
+    
+  </ul>
+  <div class="gradient"></div>
+  <ul id="full-list" class="sidebar-fullList"></ul>
+</section>
+
+<section class="content">
+  <div class="content-outer">
+    <div id="content" class="content-inner">
+
+
+<h1>Elixir2pdf</h1>
+<p>Elixir2pdf is a simple Elixir wrapper for ErlGuten, a Erlang PDF generation application. It is limited to my current needs of ErlGuten’s functionality as well as some additional functionality not provided by ErlGuten, but I will continue to explore ErlGuten and improve Elixir2pdf over time. If you require specific functionality of ErlGuten that is not currently exposed, please submit an <a href="https://github.com/kennellroxco/elixir2pdf/issues">issue</a>. </p>
+<h2 id="installation" class="section-heading">
+  <a href="#installation" class="hover-link"><i class="icon-link"></i></a>
+  Installation
+</h2>
+
+<p>The package can be installed via GitHub:</p>
+<pre><code class="elixir">def deps do
+  [{:elixir2pdf, github: &quot;kennellroxco/elixir2pdf&quot;}]
+end</code></pre>
+<h2 id="basic-usage" class="section-heading">
+  <a href="#basic-usage" class="hover-link"><i class="icon-link"></i></a>
+  Basic Usage
+</h2>
+
+<p>PDF files have the following basic properties: </p>
+<ul>
+<li>The origin <code class="inline">{0, 0}</code> of a given document is the bottom-left corner. The x-axis extends to the right and the y-axis extends upward.
+</li>
+<li>Locations and sizes are stored as a <code class="inline">PDF unit</code>. Each <code class="inline">PDF unit</code> is equal to 1/72 of an inch. For example, the coordinate point <code class="inline">{72, 72}</code> is located 1 inch to the right of the left edge of the page and 1 inch above the bottom edge of the page.
+</li>
+<li>PDF documents are sized according to their <code class="inline">media box</code> and <code class="inline">crop box</code> values. The <code class="inline">media box</code> is the total size of the document while the <code class="inline">crop box</code> is the viewable area. While most PDF documents have the same <code class="inline">media box</code> and <code class="inline">crop box</code> values, this is important to note because the origin <code class="inline">{0, 0}</code> is in relation to the <code class="inline">media box</code> as opposed to the viewable area of the <code class="inline">crop box</code>.
+</li>
+</ul>
+<p>Elixir2pdf works by creating a PDF GenServer process and utilizing various functions to add objects to the state of said process and ultimately exporting the data to a PDF document. See below for a list of ErlGuten functionality currently exposed and an example. Follow the links to view details for each function. </p>
+<h2 id="current-exposed-functions" class="section-heading">
+  <a href="#current-exposed-functions" class="hover-link"><i class="icon-link"></i></a>
+  Current Exposed Functions:
+</h2>
+
+<p><strong>General</strong></p>
+<ul>
+<li><a href="https://github.com/kennellroxco/elixir2pdf/blob/master/lib/elixir2pdf.ex#L10">new/1</a>
+</li>
+<li><a href="https://github.com/kennellroxco/elixir2pdf/blob/master/lib/elixir2pdf.ex#L191">close/1</a>
+</li>
+</ul>
+<p><strong>Document</strong></p>
+<ul>
+<li><a href="https://github.com/kennellroxco/elixir2pdf/blob/master/lib/elixir2pdf.ex#L22">set_new_page/1</a>
+</li>
+<li><a href="https://github.com/kennellroxco/elixir2pdf/blob/master/lib/elixir2pdf.ex#L179">export/2</a>
+</li>
+</ul>
+<p><strong>Text</strong></p>
+<ul>
+<li><a href="https://github.com/kennellroxco/elixir2pdf/blob/master/lib/elixir2pdf.ex#L38">set_font/3</a>
+</li>
+<li><a href="https://github.com/kennellroxco/elixir2pdf/blob/master/lib/elixir2pdf.ex#L55">text/4</a>
+</li>
+<li><a href="https://github.com/kennellroxco/elixir2pdf/blob/master/lib/elixir2pdf.ex#L74">right_aligned_text/5</a>
+</li>
+<li><a href="https://github.com/kennellroxco/elixir2pdf/blob/master/lib/elixir2pdf.ex#L100">center_aligned_text/6</a>
+</li>
+</ul>
+<p><strong>Graphics</strong></p>
+<ul>
+<li><a href="https://github.com/kennellroxco/elixir2pdf/blob/master/lib/elixir2pdf.ex#L131">draw_line/5</a>
+</li>
+<li><a href="https://github.com/kennellroxco/elixir2pdf/blob/master/lib/elixir2pdf.ex#L150">draw_rectangle/5</a>
+</li>
+<li><a href="https://github.com/kennellroxco/elixir2pdf/blob/master/lib/elixir2pdf.ex#L167">insert_image/4</a>
+</li>
+</ul>
+<h2 id="example" class="section-heading">
+  <a href="#example" class="hover-link"><i class="icon-link"></i></a>
+  Example:
+</h2>
+
+<pre><code class="elixir">defmodule Example do
+  import Elixir2pdf
+
+  @font1 {&quot;OCR-B-Digits&quot;, 10}
+  @font2 {&quot;Times-Roman&quot;, 6}
+  @font3 {&quot;Courier-Bold&quot;, 12}
+  @font4 {&quot;Times-Roman&quot;, 5}
+  @font5 {&quot;OCR-A-Digits&quot;, 10}
+
+  def check_template do
+    pid = new
+
+    pid
+    |&gt; draw_rectangle({85,675}, {300, 125}, 0.5)
+    |&gt; set_font(@font1, :blue)
+    |&gt; right_aligned_text(@font1, 375, 785, &quot;1025&quot;)
+    |&gt; set_font(@font2)
+    |&gt; right_aligned_text(@font2, 300, 765, &quot;DATE&quot;)
+    |&gt; draw_line({305, 765}, {355, 765}, 0.5)
+    |&gt; text(90,750, &quot;PAY TO THE&quot;)
+    |&gt; text(90,745, &quot;ORDER OF&quot;)
+    |&gt; draw_line({125, 745}, {315, 745}, 0.5)
+    |&gt; draw_line({315,745}, {315, 750}, 0.5)
+    |&gt; set_font(@font3)
+    |&gt; text(320, 745, &quot;$&quot;)
+    |&gt; draw_rectangle({330, 742}, {45, 13}, 1, :antiquewhite4)
+    |&gt; draw_line({95, 727}, {320, 727}, 0.5)
+    |&gt; set_font(@font2)
+    |&gt; text(325, 727, &quot;DOLLARS&quot;)
+    |&gt; set_font(@font4)
+    |&gt; text(90, 695, &quot;MEMO&quot;)
+    |&gt; draw_line({110, 695}, {220, 695}, 0.5)
+    |&gt; draw_line({240, 695}, {375, 695}, 0.5)
+    |&gt; set_font(@font5)
+    |&gt; text(110, 680, &quot;000000000  000000000    1025&quot;)
+    |&gt; export(&quot;./example.pdf&quot;)
+    |&gt; close
+  end
+end</code></pre>
+<h2 id="contributing" class="section-heading">
+  <a href="#contributing" class="hover-link"><i class="icon-link"></i></a>
+  Contributing
+</h2>
+
+<p>Contributions are encouraged. Feel free to fork the repo, add your code along with appropriate tests and documentation (ensuring all existing tests continue to pass) and submit a pull request.</p>
+
+      <footer class="footer">
+        <p>
+          <span class="line">
+            Built using
+            <a href="https://github.com/elixir-lang/ex_doc" title="ExDoc" rel="help" target="_blank">ExDoc</a> (v0.13.2),
+          </span>
+          <span class="line">
+            designed by
+            <a href="https://twitter.com/dignifiedquire" target="_blank" title="@dignifiedquire">Friedel Ziegelmayer</a>.
+            </span>
+        </p>
+        <button class="night-mode-toggle" />
+      </footer>
+    </div>
+  </div>
+</section>
+</div>
+  <script src="dist/app-61b5aaceee.js"></script>
+  </body>
+</html>
+

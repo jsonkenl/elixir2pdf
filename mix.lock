@@ -1,1 +1,3 @@
-%{"erlguten": {:git, "https://github.com/kennellroxco/erlguten.git", "ec248a63d338c91ff4c4923e31388944383ee3e7", []}}
+%{"earmark": {:git, "https://github.com/pragdave/earmark.git", "c2bfb02011c657b448c039e48f7163b01c025a0c", []},
+  "erlguten": {:git, "https://github.com/kennellroxco/erlguten.git", "ec248a63d338c91ff4c4923e31388944383ee3e7", []},
+  "ex_doc": {:git, "https://github.com/elixir-lang/ex_doc.git", "1fd11cc1870258a41c179ea2d8c146d4563290b1", []}}

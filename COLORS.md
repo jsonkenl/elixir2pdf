@@ -1,60 +1,60 @@
-#Available Colors:
+# Available Colors:
 
-##HTML Standard
-- #white
-- #silver
-- #gray
-- #black
-- #maroon
-- #red
-- #fuchsia
-- #purple
-- #lime
-- #green
-- #olive
-- #yellow
-- #navy
-- #blue
-- #teal
-- #aqua
+## HTML Standard
+- :white
+- :silver
+- :gray
+- :black
+- :maroon
+- :red
+- :fuchsia
+- :purple
+- :lime
+- :green
+- :olive
+- :yellow
+- :navy
+- :blue
+- :teal
+- :aqua
 
-##Blue
-- #blue2
-- #blue3
-- #blue4
-- #blueviolet
-- #cornflowerblue
-- #darkorchid
-- #darkslateblue
-- #darkviolet
-- #deepskyblue
-- #dodgerblue
-- #lightskyblue
-- #mediumblue
-- #mediumpurple
-- #mediumslateblue
-- #midnightblue
-- #purpleblue
-- #royalblue
-- #skyblue2
-- #slateblue
+## Blue
+- :blue2
+- :blue3
+- :blue4
+- :blueviolet
+- :cornflowerblue
+- :darkorchid
+- :darkslateblue
+- :darkviolet
+- :deepskyblue
+- :dodgerblue
+- :lightskyblue
+- :mediumblue
+- :mediumpurple
+- :mediumslateblue
+- :midnightblue
+- :purpleblue
+- :royalblue
+- :skyblue2
+- :slateblue
 
-##Cyan
-- #aquamarine4
-- #cadetblue
-- #darkturquoise
-- #lightblue
-- #lightseagreen
-- #lightslategray
-- #lightsteelblue
-- #mediumturquoise
-- #paleturquoise
-- #powderblue
-- #skyblue
-- #steelblue
-- #turquoise
+## Cyan
+- :aquamarine4
+- :cadetblue
+- :darkturquoise
+- :lightblue
+- :lightseagreen
+- :lightslategray
+- :lightsteelblue
+- :mediumturquoise
+- :paleturquoise
+- :powderblue
+- :skyblue
+- :steelblue
+- :turquoise
 
-##Gray
+## Gray
 - :antiquewhite3
 - :antiquewhite4
 - :azure3
@@ -66,7 +66,7 @@
 - :thistle
 - :lightgray
 
-##Green
+## Green
 - :aquamarine
 - :chartreuse
 - :darkgreen
@@ -87,7 +87,7 @@
 - :springgreen
 - :yellowgreen
 
-##Magenta
+## Magenta
 - :magenta
 - :magenta2
 - :magenta3
@@ -97,7 +97,7 @@
 - :plum
 - :violet
 
-##Red
+## Red
 - :brown
 - :burlywood
 - :chocolate
@@ -131,7 +131,7 @@
 - :tomato
 - :violetred
 
-##White
+## White
 - :aliceblue
 - :azure
 - :floralwhite
@@ -149,7 +149,7 @@
 - :snow
 - :whitesmoke
 
-##Yellow
+## Yellow
 - :antiquewhite
 - :bisque
 - :blancedalmond
