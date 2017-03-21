@@ -9,9 +9,9 @@ defmodule Elixir2pdf.Mixfile do
      name: "Elixir2pdf",
      build_embedded: Mix.env == :prod,
      start_permanent: Mix.env == :prod,
-     description: description,
-     package: package,
-     deps: deps,
+     description: description(),
+     package: package(),
+     deps: deps(),
      docs: [
             main: "readme", 
             extras: ["README.md", "COLORS.md", "FONTS.md", "CHANGELOG.md"]
