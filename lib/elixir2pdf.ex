@@ -1,11 +1,11 @@
 defmodule Elixir2pdf do
   @moduledoc """
-  Elixir2pdf is a simple Elixir wrapper for ErlGuten, a Erlang PDF generation application. 
+  Elixir2pdf is a simple Elixir wrapper for ErlGuten, a Erlang PDF generation application.
   See README.md for a general overview.
   """
 
   @doc """
-  Starts a new PDF process and returns a process identifier (pid). 
+  Starts a new PDF process and returns a process identifier (pid).
   """
   def new do
     :eg_pdf.new
@@ -13,7 +13,7 @@ defmodule Elixir2pdf do
 
   @doc """
   Creates a new page and returns a process identifier (pid). Any subsequent activity will occur
-  on the new page. Note: Elixir2pdf.new/0 takes care of this, so it is not necessary for the 
+  on the new page. Note: Elixir2pdf.new/0 takes care of this, so it is not necessary for the
   first page.
 
   ## Parameters
@@ -26,11 +26,11 @@ defmodule Elixir2pdf do
   end
 
   @doc """
-  Sets the font that will apply to all text that follows. 
+  Sets the font that will apply to all text that follows.
 
   ## Parameters
   - `pid` - the process identifier of the current PDF process.
-  - `font` - a tuple containing the name of the font in `string` format and the font size in `integer` format. See 
+  - `font` - a tuple containing the name of the font in `string` format and the font size in `integer` format. See
   the FONTS.md documentation for a list of available fonts.
   - `color` - name of font color in `atom` format. See the COLORS.md documentation for a list of
   available colors. Default is `:black`.
@@ -43,7 +43,7 @@ defmodule Elixir2pdf do
   end
 
   @doc """
-  Adds text to a PDF process at a given coordinate. See the README.md file for 
+  Adds text to a PDF process at a given coordinate. See the README.md file for
   additional detail on how PDF document navigation works.
 
   ## Parameters
@@ -102,10 +102,10 @@ defmodule Elixir2pdf do
     text   = text |> String.to_charlist
     name   = name |> String.to_charlist
     length = pid  |> :eg_pdf.get_string_width(name, size, text)
-    start  = (x2 - x1) 
-             |> Kernel.-(length) 
-             |> Kernel./(2) 
-             |> Kernel.+(x1) 
+    start  = (x2 - x1)
+             |> Kernel.-(length)
+             |> Kernel./(2)
+             |> Kernel.+(x1)
              |> round
 
     pid |> :eg_pdf.begin_text
@@ -120,9 +120,9 @@ defmodule Elixir2pdf do
 
   ## Parameters
   - `pid` - the process identifier of the current PDF process.
-  - `from` - a tuple containing the `x` and `y` coordinate points of the start of a 
+  - `from` - a tuple containing the `x` and `y` coordinate points of the start of a
   line (i.e. {0, 0}).
-  - `to` - a tuple containing the `x` and `y` coordinate points of the end of a 
+  - `to` - a tuple containing the `x` and `y` coordinate points of the end of a
   line (i.e. {72, 72}).
   - `width` - the desired thickness of the line in `integer` or `float` format.
   - `color` - name of line color in `atom` format. See the COLORS.md documentation for a list of
@@ -130,7 +130,7 @@ defmodule Elixir2pdf do
   """
   def draw_line(pid, from, to, width, color \\ :black) do
     pid |> :eg_pdf.set_stroke_color(color)
-    pid |> :eg_pdf.set_line_width(width)    
+    pid |> :eg_pdf.set_line_width(width)
     pid |> :eg_pdf.line(from, to)
     pid
   end
@@ -140,7 +140,7 @@ defmodule Elixir2pdf do
 
   ## Parameters
   - `pid` - the process identifier of the current PDF process.
-  - `basepoint` - a tuple containing the coordinate points where the bottom-left corder of the rectangle 
+  - `basepoint` - a tuple containing the coordinate points where the bottom-left corder of the rectangle
   will be located (i.e. {0, 0}).
   - `size` - a tuple containing the width and height dimensions of the image (i.e. {64, 89}).
   - `width` - the desired thickness of the line in `integer` or `float` format.
@@ -149,7 +149,7 @@ defmodule Elixir2pdf do
   """
   def draw_rectangle(pid, basepoint, size, width, color \\ :black) do
     pid |> :eg_pdf.set_stroke_color(color)
-    pid |> :eg_pdf.set_line_width(width) 
+    pid |> :eg_pdf.set_line_width(width)
     pid |> :eg_pdf.rectangle(basepoint, size, :stroke)
     pid
   end
@@ -160,7 +160,7 @@ defmodule Elixir2pdf do
   ## Parameters
   - `pid` - the process identifier of the current PDF process.
   - `path` - path where the image file is located in `string` format (i.e. "./example.jpg").
-  - `basepoint` - a tuple containing the coordinate points where the bottom-left corder of the image 
+  - `basepoint` - a tuple containing the coordinate points where the bottom-left corder of the image
   will be located (i.e. {0, 0}).
   - `size` - a tuple containing the width and height dimensions of the image (i.e. {64, 89}).
   """
@@ -192,11 +192,3 @@ defmodule Elixir2pdf do
     pid |> :eg_pdf.delete
   end
 end
-
-
-
-
-
-
-
-
