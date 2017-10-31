@@ -7,7 +7,7 @@ Elixir2pdf is a simple Elixir wrapper for ErlGuten, a Erlang PDF generation appl
 The package can be installed via GitHub:
 
     def deps do
-      [{:elixir2pdf, github: "kennellroxco/elixir2pdf"}]
+      [{:elixir2pdf, github: "jsonkenl/elixir2pdf"}]
     end
 
 ## Basic Usage
