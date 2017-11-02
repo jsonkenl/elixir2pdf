@@ -37,7 +37,7 @@ defmodule Elixir2pdf.Mixfile do
   # Type "mix help deps" for more examples and options
   defp deps do
     [
-      {:erlguten, github: "jsonkennell/erlguten"},
+      {:erlguten, github: "jsonkenl/erlguten"},
       {:ex_doc, github: "elixir-lang/ex_doc", only: :dev},
       {:earmark, github: "pragdave/earmark", override: true, only: :dev}
     ]
